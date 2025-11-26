@@ -1,0 +1,23 @@
+@import './shadcn.css';
+@import './typography.css';
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-primary: #00a8cc;
+  --color-secondary: #44bba5;
+  --color-accent-orange: #f29240;
+  --color-accent-silk: #fce0c9;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

@@ -1,0 +1,21 @@
+name: Vercel Preview Staging Deployment
+on:
+  push:
+    branches:
+      - staging
+  workflow_dispatch:
+
+jobs:
+  Lint:
+    uses: ./.github/workflows/lint.yml
+  Deploy-staging:
+    runs-on: ubuntu-latest
+    needs: Lint
+    environment: Staging
+    # Run actions action if actor is not andrijunaedi or aldycavalera
+    if: ${{ (github.actor != 'andrijunaedi') && (github.actor != 'aldycavalera') }}
+    steps:
+      - name: Trigger CURL Hook
+        run: |
+          curl -X POST -d {} ${{ vars.VERCEL_DEPLOY_HOOK }}
+          echo " Wait a minute until the vercel deployment is done.."

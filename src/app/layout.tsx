@@ -1,0 +1,62 @@
+import '@/styles/globals.css'
+
+import { siteMetadata } from '@/constants/site-metadata'
+import { Analytics } from '@vercel/analytics/react'
+import { Metadata, Viewport } from 'next'
+import { Plus_Jakarta_Sans } from 'next/font/google'
+import NextTopLoader from 'nextjs-toploader'
+import React from 'react'
+
+import { Toaster } from '@/components/atoms/ui/sonner'
+
+import { cn } from '@/utils/cn'
+
+export const metadata: Metadata = {
+  title: {
+    default: siteMetadata.name,
+    template: `%s | ${siteMetadata.name}`
+  },
+  description: siteMetadata.description,
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.png',
+    apple: '/apple-touch-icon.png'
+  },
+  manifest: '/manifest.json',
+  openGraph: {
+    images: '/favicon.png'
+  },
+  metadataBase: new URL(siteMetadata.url)
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  themeColor: '#00A8CC',
+  colorScheme: 'light',
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: 'cover'
+}
+
+const sans = Plus_Jakarta_Sans({ subsets: ['latin'], display: 'swap', variable: '--font-sans' })
+
+export default async function RootLayout({
+  children
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en">
+      <body className={cn('min-h-screen antialiased', sans.variable)}>
+        <React.Fragment>
+          <NextTopLoader color="#00A8CC" showSpinner={false} />
+          {children}
+          <Toaster richColors position="top-right" closeButton theme="light" />
+        </React.Fragment>
+        <Analytics />
+      </body>
+    </html>
+  )
+}
