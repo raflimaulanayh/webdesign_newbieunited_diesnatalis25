@@ -25,7 +25,7 @@ export const Navbar = () => {
     <Fragment>
       <header
         className={cn(
-          'sticky top-0 flex w-full items-center transition-all duration-500',
+          'sticky top-0 z-50 flex w-full items-center transition-all duration-500',
           scrolled ? 'h-21 bg-gray-50/90 shadow-sm backdrop-blur-sm' : 'h-23 bg-gray-50'
         )}
       >

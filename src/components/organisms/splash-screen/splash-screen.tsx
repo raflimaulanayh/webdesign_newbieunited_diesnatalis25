@@ -3,10 +3,14 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
+import { useSplashStore } from '@/hooks/useSplashStore'
+
 export const SplashScreen = () => {
+  const MIN_DURATION = 2000
   const [show, setShow] = useState(true)
   const [minimumTimePassed, setMinimumTimePassed] = useState(false)
-  const MIN_DURATION = 2000
+
+  const finish = useSplashStore((s) => s.finish)
 
   useEffect(() => {
     const timer = setTimeout(() => setMinimumTimePassed(true), MIN_DURATION)
@@ -30,10 +34,14 @@ export const SplashScreen = () => {
   }, [minimumTimePassed])
 
   return (
-    <AnimatePresence>
+    <AnimatePresence
+      onExitComplete={() => {
+        finish()
+      }}
+    >
       {show && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-white font-bold"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-white font-bold"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{

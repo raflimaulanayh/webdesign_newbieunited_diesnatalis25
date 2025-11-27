@@ -1,2 +1,1 @@
-export * from './hero-landing'
 export * from './awareness-landing'
