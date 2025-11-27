@@ -53,7 +53,7 @@ export const Navbar = () => {
               <HeadsetIcon className="size-7" />
             </Button>
 
-            <Button variant="outline-green" url="/mitra">
+            <Button variant="outline-green" url="/registrasi">
               Gabung
             </Button>
 
