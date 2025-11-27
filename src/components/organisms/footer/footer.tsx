@@ -1,63 +1,8 @@
-import {
-  EnvelopeIcon,
-  InstagramLogoIcon,
-  LinkedinLogoIcon,
-  PhoneIcon,
-  WhatsappLogoIcon,
-  YoutubeLogoIcon
-} from '@phosphor-icons/react'
+import { COMPANY_LINKS, CONTACT_INFO, HELP_LINKS, SOCIAL_LINKS, STORE_LINKS } from '@/constants/general-data'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import { Container } from '@/components/templates/container'
-
-const HELP_LINKS = [
-  { href: '/', label: 'Cara Pesan' },
-  { href: '/chatbot', label: 'FAQ (Tanya Jawab)' },
-  { href: '/kebijakan-privasi', label: 'Kebijakan Privasi' },
-  { href: '/syarat-ketentuan', label: 'Syarat dan Ketentuan' }
-]
-
-const COMPANY_LINKS = [
-  { href: '/tentang-kami', label: 'Tentang Kami' },
-  { href: '/blog', label: 'Blog & Edukasi' },
-  { href: '/mitra', label: 'Gabung Mitra' }
-]
-
-const CONTACT_INFO = [
-  {
-    href: 'mailto:hello@mealup.my.id',
-    label: 'Email',
-    icon: EnvelopeIcon,
-    text: 'hello@mealup.my.id'
-  },
-  {
-    href: 'tel:6281234567890',
-    label: 'Phone Number',
-    icon: PhoneIcon,
-    text: '0812-3456-7890'
-  }
-]
-
-const SOCIAL_LINKS = [
-  { href: 'https://instagram.com/mealup.my.id', label: 'Instagram', icon: InstagramLogoIcon },
-  { href: 'https://wa.me/6281234567890', label: 'WhatsApp', icon: WhatsappLogoIcon },
-  { href: 'https://linkedin.com/mealup-my-id', label: 'LinkedIn', icon: LinkedinLogoIcon },
-  { href: 'https://youtube.com/mealup-my-id', label: 'YouTube', icon: YoutubeLogoIcon }
-]
-
-const STORE_LINKS = [
-  {
-    href: 'https://play.google.com/store',
-    label: 'Play Store',
-    src: '/static/icons/store/play-store.svg'
-  },
-  {
-    href: 'https://www.apple.com/id/app-store',
-    label: 'App Store',
-    src: '/static/icons/store/app-store.svg'
-  }
-]
 
 export const Footer = () => (
   <footer className="w-full bg-primary">
@@ -112,7 +57,7 @@ export const Footer = () => (
         </nav>
 
         <nav className="flex items-center gap-5 py-2.5">
-          {STORE_LINKS.map(({ href, label, src }) => (
+          {STORE_LINKS.WHITE.map(({ href, label, src }) => (
             <a
               key={href}
               href={href}

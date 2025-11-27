@@ -3,6 +3,7 @@ import {
   CallToAction,
   CategoryLanding,
   CTALanding,
+  DownloadLanding,
   HeroLanding,
   ImpactLanding,
   MapLanding,
@@ -21,6 +22,7 @@ export default function LandingPage() {
       <MapLanding />
       <SponsorLanding />
       <CTALanding />
+      <DownloadLanding />
     </GeneralLayout>
   )
 }

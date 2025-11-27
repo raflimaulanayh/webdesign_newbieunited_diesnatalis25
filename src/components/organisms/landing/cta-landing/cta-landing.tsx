@@ -79,7 +79,7 @@ export const CTALanding = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.1 }}
-      className="absolute right-0 bottom-0 z-0 md:right-20"
+      className="absolute right-0 bottom-0 z-0 max-sm:hidden md:right-20"
     >
       <Image
         src="/static/images/earth.png"
