@@ -1,67 +1,69 @@
 'use client'
 
 import { AWARENESS_DATA } from '@/constants/awareness-data'
-import { motion } from 'framer-motion'
-import type { Variants, Easing } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import Image from 'next/image'
 
 import { AwarenessCard } from '@/components/molecules/card/awareness-card'
 import { Container } from '@/components/templates/container'
 
-const easeStandard: Easing = [0.25, 1, 0.5, 1]
-const easeWorld: Easing = [0.24, 0.65, 0.25, 1]
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1
+    }
+  }
+}
 
-const fadeUp: Variants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: easeStandard }
-  }
-}
-
-const staggerCards: Variants = {
-  show: {
     transition: {
-      staggerChildren: 0.18,
-      delayChildren: 0.4
+      type: 'spring',
+      stiffness: 50,
+      damping: 20
     }
   }
 }
 
-const cardItem: Variants = {
-  hidden: { opacity: 0, y: 20 },
+const headerVariants: Variants = {
+  hidden: { opacity: 0, y: -20 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: easeStandard }
+    transition: { duration: 0.5, ease: 'easeOut' }
   }
 }
 
-const worldLeft: Variants = {
-  hidden: { opacity: 0, x: -180, rotate: -10 },
+const worldLeftVariants: Variants = {
+  hidden: { opacity: 0, x: -100, rotate: -10 },
   show: {
     opacity: 1,
     x: 0,
     rotate: 0,
     transition: {
-      duration: 1,
-      ease: easeWorld,
-      delay: 0.25
+      duration: 0.8,
+      ease: 'easeOut',
+      delay: 0.2
     }
   }
 }
 
-const worldRight: Variants = {
-  hidden: { opacity: 0, x: 180, rotate: 10 },
+const worldRightVariants: Variants = {
+  hidden: { opacity: 0, x: 100, rotate: 10 },
   show: {
     opacity: 1,
     x: 0,
     rotate: 0,
     transition: {
-      duration: 1,
-      ease: easeWorld,
-      delay: 0.35
+      duration: 0.8,
+      ease: 'easeOut',
+      delay: 0.3
     }
   }
 }
@@ -69,50 +71,44 @@ const worldRight: Variants = {
 export const AwarenessLanding = () => (
   <section className="relative overflow-hidden bg-primary pt-10 pb-32 lg:pt-20">
     <Container className="relative z-10 flex flex-col items-center gap-7 text-center lg:gap-10">
-      <motion.h2
-        variants={fadeUp}
+      <motion.div
+        variants={headerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
-        className="mx-auto flex flex-wrap justify-center gap-2 text-2xl font-bold text-white max-sm:w-9/12 sm:text-3xl lg:text-4xl"
+        viewport={{ once: true, amount: 0.5 }}
+        className="flex flex-col gap-7"
       >
-        Selamatkan Makanan
-        <span className="bg-secondary px-2.5">Diskon hingga 50%</span>
-      </motion.h2>
+        <h2 className="mx-auto flex flex-wrap justify-center gap-2 text-2xl font-bold text-white max-sm:w-9/12 sm:text-3xl lg:text-4xl">
+          Selamatkan Makanan
+          <span className="bg-secondary px-2.5">Diskon hingga 50%</span>
+        </h2>
 
-      <motion.article
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
-        className="mx-auto flex max-w-lg flex-col gap-7 text-center"
-      >
         <p className="mx-auto font-medium text-white max-sm:w-11/12 lg:text-lg">
           Dapatkan makanan berkualitas dengan harga hemat hingga 50%, hanya di aplikasi <b>Meal Up</b>
         </p>
+      </motion.div>
 
-        <motion.div
-          variants={staggerCards}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="flex flex-col gap-5"
-        >
-          {AWARENESS_DATA.map((item, index) => (
-            <motion.div variants={cardItem} key={index}>
-              <AwarenessCard {...item} />
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.article>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        className="flex w-full max-w-lg flex-col gap-5"
+      >
+        {AWARENESS_DATA.map((item, index) => (
+          <motion.div variants={itemVariants} key={index}>
+            <AwarenessCard {...item} />
+          </motion.div>
+        ))}
+      </motion.div>
     </Container>
 
     <motion.div
-      variants={worldLeft}
+      variants={worldLeftVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.4 }}
-      className="absolute bottom-0 left-0 "
+      viewport={{ once: true, amount: 0.1 }}
+      className="pointer-events-none absolute bottom-0 left-0 z-0"
     >
       <Image
         src="/static/images/decoration/world-left.png"
@@ -124,11 +120,11 @@ export const AwarenessLanding = () => (
     </motion.div>
 
     <motion.div
-      variants={worldRight}
+      variants={worldRightVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.4 }}
-      className="absolute right-0 max-sm:hidden lg:bottom-6"
+      viewport={{ once: true, amount: 0.1 }}
+      className="pointer-events-none absolute right-0 bottom-6 z-0 max-sm:hidden"
     >
       <Image
         src="/static/images/decoration/world-right.png"
