@@ -1,5 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-bun run lint:fix
-bun run prettier:format
+pnpm run lint:fix
+pnpm run prettier:format

@@ -13,13 +13,13 @@
     "typecheck": "tsc --noEmit --incremental false",
     "prettier:check": "prettier --check \"**/*.{ts,tsx,json}\"",
     "prettier:format": "prettier --write .",
-    "generate": "bun plop --plopfile ./.plop/plopfile.js",
+    "generate": "pnpm plop --plopfile ./.plop/plopfile.js",
     "prepare": "husky"
   },
   "lint-staged": {
     "src/**/*": [
-      "bun run lint:fix",
-      "bun run prettier:format"
+      "pnpm run lint:fix",
+      "pnpm run prettier:format"
     ]
   },
   "dependencies": {
