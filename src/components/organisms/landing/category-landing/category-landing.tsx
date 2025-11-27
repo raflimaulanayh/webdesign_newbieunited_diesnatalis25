@@ -40,7 +40,7 @@ const headerVariants: Variants = {
 }
 
 export const CategoryLanding = () => (
-  <section className="bg-white py-16 lg:py-20">
+  <section className="bg-slate-50 py-16 lg:py-20">
     <Container className="flex max-w-6xl! flex-col gap-10 lg:gap-14">
       <motion.header
         className="flex flex-col items-center gap-y-2.5 text-center"
