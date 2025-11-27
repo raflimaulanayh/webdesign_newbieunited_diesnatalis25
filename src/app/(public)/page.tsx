@@ -4,7 +4,8 @@ import {
   CategoryLanding,
   HeroLanding,
   ImpactLanding,
-  MapLanding
+  MapLanding,
+  SponsorLanding
 } from '@/components/organisms/landing'
 import { GeneralLayout } from '@/components/templates/general-layout'
 
@@ -17,6 +18,7 @@ export default function LandingPage() {
       <ImpactLanding />
       <CallToAction variant="minimal" />
       <MapLanding />
+      <SponsorLanding />
     </GeneralLayout>
   )
 }
