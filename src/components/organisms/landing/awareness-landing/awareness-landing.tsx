@@ -80,7 +80,7 @@ export const AwarenessLanding = () => (
       >
         <h2 className="mx-auto flex flex-wrap justify-center gap-2 text-2xl font-bold text-white max-sm:w-9/12 sm:text-3xl lg:text-4xl">
           Selamatkan Makanan
-          <span className="bg-secondary px-2.5">Diskon hingga 50%</span>
+          <span className="bg-secondary px-2.5 text-nowrap">Diskon hingga 50%</span>
         </h2>
 
         <p className="mx-auto font-medium text-white max-sm:w-11/12 lg:text-lg">

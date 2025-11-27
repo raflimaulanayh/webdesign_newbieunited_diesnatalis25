@@ -49,7 +49,7 @@ export const ImpactLanding = () => (
         viewport={{ once: true, amount: 0.5 }}
         className="mx-auto flex flex-wrap justify-center gap-2 text-2xl font-bold text-white max-sm:w-10/12 sm:text-3xl lg:text-4xl"
       >
-        Dampak Nyata Pahlawan
+        <span className="text-nowrap">Dampak Nyata Pahlawan</span>
         <span className="bg-secondary px-2.5">Meal Up</span>
       </motion.h2>
 
