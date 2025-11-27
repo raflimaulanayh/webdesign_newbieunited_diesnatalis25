@@ -25,4 +25,8 @@
   a {
     @apply cursor-pointer transition-all hover:scale-[0.98];
   }
+
+  .bg-cta-gradient {
+    background: linear-gradient(92deg, var(--primary, #00A8CC) -1.76%, var(--secondary, #44BBA5) 138.96%);
+  }
 }

@@ -1,4 +1,4 @@
-import { AwarenessLanding, CategoryLanding, HeroLanding, ImpactLanding } from '@/components/organisms/landing'
+import { AwarenessLanding, CallToAction, CategoryLanding, HeroLanding, ImpactLanding } from '@/components/organisms/landing'
 import { GeneralLayout } from '@/components/templates/general-layout'
 
 export default function LandingPage() {
@@ -8,6 +8,7 @@ export default function LandingPage() {
       <AwarenessLanding />
       <CategoryLanding />
       <ImpactLanding />
+      <CallToAction variant="minimal" />
     </GeneralLayout>
   )
 }

@@ -1,10 +1,10 @@
 'use client'
 
-import { ABOUT_DATA } from '@/constants/about-data' // Import data tadi
+import { ABOUT_DATA } from '@/constants/about-data'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-export const Tentang = () => {
+export const HeroAbout = () => {
   return (
     <section className="relative w-full pt-20 pb-0">
       <div className="relative z-20 flex w-full justify-center">

@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 import { Container } from '@/components/templates/container'
 
-export const VisiMisi = () => {
+export const VisiMisiAbout = () => {
   const { visi, misi } = VISI_MISI_DATA
 
   return (
@@ -56,7 +56,7 @@ export const VisiMisi = () => {
             <ul className="mt-4 space-y-6">
               {misi.points.map((point, index) => (
                 <li key={index} className="flex items-start gap-4">
-                  <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-slate-400" />
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-400" />
                   <p className="text-justify text-lg leading-relaxed text-slate-600">
                     <span className="mb-1 block font-bold text-slate-800">{point.title}</span>
                     {point.description}
