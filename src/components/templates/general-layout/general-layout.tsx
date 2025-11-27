@@ -24,11 +24,15 @@ interface GeneralLayoutProps {
 export const GeneralLayout = ({ children, className }: GeneralLayoutProps) => {
   const isDone = useSplashStore((s) => s.isDone)
 
+  if (!isDone) {
+    return null
+  }
+
   return (
     <Fragment>
       <Navbar />
       <StickyChatbot />
-      <div className={className}>{isDone && children}</div>
+      <div className={className}>{children}</div>
       <Footer />
     </Fragment>
   )
