@@ -5,7 +5,7 @@ This is a [Next.js](https://nextjs.org) project for the Meal Up | Level Up Your 
 ## Features
 
 - Next.js 16.0.4 (App Router)
-- Bun support for fast development and CI
+- Bun and pnpm support for fast development and CI
 - Authentication with NextAuth.js
 - Theme switching (light/dark) with `next-themes`
 - Global state management with Zustand
@@ -19,15 +19,19 @@ This is a [Next.js](https://nextjs.org) project for the Meal Up | Level Up Your 
 
 ## Getting Started
 
-Install dependencies:
+Install dependencies (choose one):
 
 ```bash
+pnpm install
+# or
 bun install
 ```
 
 Run the development server:
 
 ```bash
+pnpm dev
+# or
 bun dev
 ```
 
@@ -49,12 +53,14 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Scripts
 
-- `bun dev` — Start development server
-- `bun run build` — Build for production
-- `bun start` — Start production server
-- `bun run lint` — Run linter
-- `bun run typecheck` — TypeScript type checking
-- `bun run prettier:format` — Format code
+- `pnpm dev` — Start development server
+- `pnpm build` — Build for production
+- `pnpm start` — Start production server
+- `pnpm lint` — Run linter
+- `pnpm typecheck` — TypeScript type checking
+- `pnpm prettier:format` — Format code
+
+Or use the same commands with `bun run` if you prefer Bun.
 
 ## Environment Variables
 
@@ -68,6 +74,7 @@ APP_URL=https://yourdomain.com
 ## Learn More
 
 - [Next.js Documentation](https://nextjs.org/docs)
+- [pnpm Documentation](https://pnpm.io/)
 - [Bun Documentation](https://bun.sh/docs)
 - [NextAuth.js Docs](https://next-auth.js.org/)
 - [Vercel Analytics](https://vercel.com/analytics)

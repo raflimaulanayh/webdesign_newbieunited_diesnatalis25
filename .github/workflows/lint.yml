@@ -13,20 +13,24 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-        
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          bun-version: latest
+          node-version: "22"
+          cache: "pnpm"
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Download deps
-        run: bun install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Lint
-        run: bun run lint:strict
+        run: pnpm run lint:strict
 
       - name: Type check
-        run: bun run typecheck
+        run: pnpm run typecheck
 
       - name: Prettier check
-        run: bun run prettier:format
+        run: pnpm run prettier:format
