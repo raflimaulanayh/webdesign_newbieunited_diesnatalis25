@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.APP_URL ?? 'https://mealup.com'
+  const baseUrl = process.env.APP_URL ?? 'https://www.meal-up.my.id'
 
   return [
     {

@@ -1,4 +1,4 @@
-import { HeroRegist, RegisterForm } from '@/components/organisms/registrasi'
+import { HeroRegist, RegisterForm, CallToAction } from '@/components/organisms/registrasi'
 import { GeneralLayout } from '@/components/templates/general-layout'
 
 export default function TentangPage() {
@@ -6,6 +6,7 @@ export default function TentangPage() {
     <GeneralLayout className="min-h-screen">
       <HeroRegist />
       <RegisterForm />
+      <CallToAction />
     </GeneralLayout>
   )
 }
