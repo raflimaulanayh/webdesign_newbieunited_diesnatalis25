@@ -41,7 +41,7 @@ export const Footer = () => (
 
         <nav className="flex flex-col gap-3">
           {CONTACT_INFO.map(({ href, label, icon: Icon, text }) => (
-            <a key={href} href={href} className="flex items-center gap-2 hover:underline" aria-label={label}>
+            <a key={Math.random() + 1} href={href} className="flex items-center gap-2 hover:underline" aria-label={label}>
               <Icon size={24} />
               {text}
             </a>
@@ -50,7 +50,7 @@ export const Footer = () => (
 
         <nav className="flex items-center gap-4">
           {SOCIAL_LINKS.map(({ href, label, icon: Icon }) => (
-            <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+            <a key={Math.random() + 1} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
               <Icon size={24} />
             </a>
           ))}
@@ -59,7 +59,7 @@ export const Footer = () => (
         <nav className="flex items-center gap-5 py-2.5">
           {STORE_LINKS.WHITE.map(({ href, label, src }) => (
             <a
-              key={href}
+              key={Math.random() + 1}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
@@ -87,7 +87,7 @@ const FooterSection = ({ title, links }: { title: string; links: Array<{ href: s
     <h3 className="text-xl font-semibold lg:text-2xl">{title}</h3>
     <nav className="flex flex-col gap-y-1 font-medium">
       {links.map(({ href, label }) => (
-        <Link key={href} href={href} className="hover:underline">
+        <Link key={Math.random() + 1} href={href} className="hover:underline">
           {label}
         </Link>
       ))}
