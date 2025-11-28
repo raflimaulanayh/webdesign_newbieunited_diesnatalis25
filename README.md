@@ -28,13 +28,13 @@ Berikut adalah langkah-langkah untuk menyiapkan lingkungan pengembangan (develop
 **1. Clone Repository**
 
 ```
-git clone https://github.com/raflimaulanayh/webdesign_newbieunited_diesnatalis25.git
+git clone https://github.com/raflimaulanayh/webdesign_newbieunited_technoversary25.git
 ```
 
 **2. Masuk ke Direktori Proyek**
 
 ```
-cd webdesign_newbieunited_diesnatalis25
+cd webdesign_newbieunited_technoversary25
 ```
 
 **3. Instalasi Dependencies**
