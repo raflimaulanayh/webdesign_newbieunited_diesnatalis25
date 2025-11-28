@@ -28,7 +28,7 @@ export const ArticleShare = () => {
       <div className="flex items-center gap-3">
         <button
           onClick={() => openShare(`https://wa.me/?text=${encodeURIComponent(currentUrl)}`)}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-600 transition-colors hover:bg-green-100"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 text-gray-700 transition-colors hover:bg-blue-100 hover:text-primary"
           aria-label="Share to WhatsApp"
         >
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
@@ -38,7 +38,7 @@ export const ArticleShare = () => {
 
         <button
           onClick={() => openShare(`https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`)}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-colors hover:bg-blue-100"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 text-gray-700 transition-colors hover:bg-blue-100 hover:text-primary"
           aria-label="Share to Facebook"
         >
           <Facebook className="h-5 w-5" />
@@ -46,7 +46,7 @@ export const ArticleShare = () => {
 
         <button
           onClick={() => openShare(`https://twitter.com/intent/tweet?url=${currentUrl}`)}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition-colors hover:bg-gray-200"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 text-gray-700 transition-colors hover:bg-blue-100 hover:text-primary"
           aria-label="Share to Twitter"
         >
           <Twitter className="h-5 w-5" />
@@ -54,7 +54,7 @@ export const ArticleShare = () => {
 
         <button
           onClick={() => openShare(`https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`)}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-blue-700 transition-colors hover:bg-blue-100"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 text-gray-700 transition-colors hover:bg-blue-100 hover:text-primary"
           aria-label="Share to LinkedIn"
         >
           <Linkedin className="h-5 w-5" />
@@ -64,10 +64,10 @@ export const ArticleShare = () => {
 
         <button
           onClick={handleCopy}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 text-gray-600 transition-colors hover:bg-gray-100 active:bg-gray-200"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 text-gray-700 transition-colors hover:bg-blue-100 hover:text-primary"
           title="Copy Link"
         >
-          {copied ? <Check className="h-5 w-5 text-green-600" /> : <LinkIcon className="h-5 w-5" />}
+          {copied ? <Check className="h-5 w-5 text-gray-600" /> : <LinkIcon className="h-5 w-5" />}
         </button>
       </div>
     </div>

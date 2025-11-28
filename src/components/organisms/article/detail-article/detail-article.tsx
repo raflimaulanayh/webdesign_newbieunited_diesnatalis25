@@ -4,7 +4,7 @@ import { articles } from '@/constants/article-data'
 import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { ArticleMeta } from '@/components/molecules/meta/article-meta'
 import { ArticleShare } from '@/components/molecules/share/article-share'
@@ -48,8 +48,8 @@ export const ArticleDetail = ({ article }: ArticleDetailProps) => {
         <div className="absolute top-0 left-0 z-30 w-full p-6">
           <Container>
             <Link
-              href="/"
-              className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors hover:bg-white/20"
+              href="/article"
+              className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-slate-700 backdrop-blur-md transition-colors hover:bg-white/90"
             >
               <ArrowLeft className="h-4 w-4" />
               Kembali ke Beranda

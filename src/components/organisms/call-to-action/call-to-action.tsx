@@ -37,7 +37,7 @@ export const CallToAction = ({ variant = 'default', className }: Props) => {
             </Fragment>
           }
           description="Ubah overstock makanan menjadi pendapatan tambahan. Balik modal setiap hari, tanpa ada yang terbuang."
-          ctaLabel={pathname.includes('/mitra') ? 'Daftar Sekarang' : 'Lihat Program Mitra'}
+          ctaLabel={pathname.includes('/mitra') ? 'Daftar sekarang' : 'Lihat program mitra'}
           ctaLink={pathname.includes('/mitra') ? '/registrasi' : '/mitra'}
         />
       )}

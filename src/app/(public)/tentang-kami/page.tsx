@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function TentangPage() {
   return (
-    <GeneralLayout className="min-h-screen">
+    <GeneralLayout>
       <HeroAbout />
       <VisiMisiAbout />
       <CallToAction className="py-0! pb-20! lg:pb-32!" />

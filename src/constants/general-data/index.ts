@@ -16,7 +16,7 @@ export const HELP_LINKS = [
 
 export const COMPANY_LINKS = [
   { href: '/tentang-kami', label: 'Tentang Kami' },
-  { href: '/article', label: 'Article' },
+  { href: '/article', label: 'Artikel' },
   { href: '/mitra', label: 'Gabung Mitra' }
 ]
 

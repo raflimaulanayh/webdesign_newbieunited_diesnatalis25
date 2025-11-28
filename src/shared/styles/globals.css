@@ -73,7 +73,7 @@
   }
 
   .article-content blockquote {
-    @apply my-8 rounded-r-lg border-l-4 border-indigo-500 bg-gray-50 px-5 py-3 text-gray-700 italic;
+    @apply my-8 rounded-r-lg border-l-4 border-primary bg-gray-50 px-5 py-3 text-gray-700 italic;
   }
 
   .article-content strong,
@@ -82,6 +82,6 @@
   }
 
   .article-content a {
-    @apply text-indigo-600 underline underline-offset-2 hover:text-indigo-800;
+    @apply text-primary underline underline-offset-2 hover:text-primary/80;
   }
 }

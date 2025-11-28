@@ -8,7 +8,7 @@ import { Container } from '@/components/templates/container'
 export const HeroLanding = () => {
   return (
     <motion.section
-      className='relative overflow-hidden bg-[url("/static/images/background/bg-hero.png")] bg-cover bg-bottom bg-no-repeat pb-20'
+      className='relative overflow-hidden bg-[url("/static/images/background/bg-hero.webp")] bg-cover bg-bottom bg-no-repeat pb-20'
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: 'easeOut' }}

@@ -1,57 +1,125 @@
 'use client'
 
 import { ABOUT_DATA } from '@/constants/about-data'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import Image from 'next/image'
+import { Fragment } from 'react/jsx-runtime'
+
+import { Container } from '@/components/templates/container'
+
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring', stiffness: 50, damping: 20 }
+  }
+}
+
+const textContainerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.3
+    }
+  }
+}
+
+const badgeVariants: Variants = {
+  hidden: { scale: 0, opacity: 0, rotate: -10, y: '50%' },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    rotate: -2,
+    y: '50%',
+    transition: {
+      type: 'spring',
+      stiffness: 200,
+      damping: 15,
+      delay: 0.2
+    }
+  }
+}
+
+const imageVariants: Variants = {
+  hidden: { opacity: 0, x: -50, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { duration: 0.8, ease: 'easeOut' }
+  }
+}
 
 export const HeroAbout = () => {
   return (
-    <section className="relative w-full pt-20 pb-0">
+    <section className="relative w-full pt-10">
       <div className="relative z-20 flex w-full justify-center">
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="translate-y-1/2 -rotate-2 transform bg-secondary px-6 py-3 text-lg font-bold text-white md:px-10 md:text-3xl"
+          variants={badgeVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          className="transform bg-secondary px-6 py-3 text-lg font-bold text-white shadow-lg md:px-10 md:text-3xl"
         >
           {ABOUT_DATA.badge.map((line, index) => (
-            <span key={index} className="block text-center">
+            <span key={index} className="block text-center leading-tight">
               {line}
             </span>
           ))}
         </motion.div>
       </div>
 
-      <div className="relative z-10 rounded-t-xl bg-primary px-6 pt-24 pb-16 text-white md:rounded-t-4xl md:px-12 lg:px-[150px]">
-        <div className="flex flex-col justify-center gap-12  md:gap-16 lg:flex-row lg:gap-24">
-          <div className="relative h-[300px] w-full rounded-sm md:rounded-2xl lg:h-[400px]">
-            <Image src={ABOUT_DATA.image} alt="Ilustrasi Food Waste" fill className="rounded-2xl object-cover" />
-          </div>
+      <div className="relative z-10 rounded-t-xl bg-primary py-16 text-white sm:pt-28! md:rounded-t-[3rem] lg:py-24">
+        <Container className="flex flex-col justify-center gap-12 xl:flex-row xl:gap-16">
+          <motion.div
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="relative h-[300px] w-full overflow-hidden rounded-2xl shadow-lg md:rounded-3xl lg:h-[400px]"
+          >
+            <Image
+              src={ABOUT_DATA.image}
+              alt="Ilustrasi Food Waste"
+              fill
+              className="object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </motion.div>
 
           <motion.div
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="space-y-6"
+            variants={textContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex flex-col justify-center space-y-6"
           >
-            <h2 className="text-3xl leading-tight font-bold md:text-4xl">{ABOUT_DATA.title}</h2>
+            <motion.h2 variants={fadeUpVariants} className="text-2xl leading-tight font-bold sm:text-3xl lg:text-4xl">
+              {ABOUT_DATA.title}
+            </motion.h2>
 
-            <div className="space-y-5 text-justify text-base leading-relaxed font-medium text-white/90">
+            <div className="space-y-3 leading-relaxed font-medium text-white/90 max-sm:text-sm lg:space-y-5">
               {ABOUT_DATA.paragraphs.map((text, index) => (
-                <p key={index}>
+                <motion.p key={index} variants={fadeUpVariants} className="text-left">
                   {text.includes('Meal Up') ? (
-                    <>
-                      <span className="font-extrabold text-white">Meal Up</span>
-                      {text.replace('Meal Up', '')}
-                    </>
+                    <Fragment>
+                      {text.split('Meal Up').map((part, i, arr) => (
+                        <span key={i}>
+                          {part}
+                          {i !== arr.length - 1 && <span className="font-extrabold text-white">Meal Up</span>}
+                        </span>
+                      ))}
+                    </Fragment>
                   ) : (
                     text
                   )}
-                </p>
+                </motion.p>
               ))}
             </div>
           </motion.div>
-        </div>
+        </Container>
       </div>
     </section>
   )

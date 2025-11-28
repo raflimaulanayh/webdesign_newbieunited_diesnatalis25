@@ -66,6 +66,7 @@ export const Navbar = ({ variant }: Props) => {
                 variant="secondary"
                 rounded="full"
                 className="size-10 justify-center lg:hidden"
+                aria-label="Toggle Menu"
               >
                 <ListIcon className="size-6" />
               </Button>

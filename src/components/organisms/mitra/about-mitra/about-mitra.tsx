@@ -85,7 +85,7 @@ export const AboutMitra = () => (
         className="mx-auto lg:w-[45%]"
       >
         <Image
-          src="/static/images/mockup-mitra.png"
+          src="/static/images/mockup-mitra.webp"
           alt="Mockup Application Meal Up"
           width={400}
           height={430}

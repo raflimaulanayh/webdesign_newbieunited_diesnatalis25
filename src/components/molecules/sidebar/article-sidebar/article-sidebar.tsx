@@ -35,7 +35,7 @@ export const ArticleSidebar = ({ tags, relatedArticles }: ArticleSidebarProps) =
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="cursor-default rounded-full border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600 transition-colors hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-600"
+                className="cursor-default rounded-full border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600 transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-primary"
               >
                 {tag}
               </span>

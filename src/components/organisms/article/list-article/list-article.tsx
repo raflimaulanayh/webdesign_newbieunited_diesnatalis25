@@ -28,7 +28,7 @@ export const ArticleList = ({ articles }: ArticleListProps) => {
       {visibleCount < articles.length && (
         <div className="mt-12 flex justify-center">
           <Button onClick={handleShowMore} size="lg" variant="secondary">
-            Tampilkan Lebih Banyak
+            Tampilkan lebih banyak
           </Button>
         </div>
       )}
