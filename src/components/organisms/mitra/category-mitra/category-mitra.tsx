@@ -6,7 +6,7 @@ import { CategoryCard } from '@/components/molecules/card/category-card'
 import { Container } from '@/components/templates/container'
 
 export const CategoryMitra = () => (
-  <section className="bg-white py-16 lg:py-20">
+  <section className="py-16 lg:py-20">
     <Container className="flex max-w-6xl! flex-col gap-10 lg:gap-14">
       <p className="text-center text-2xl font-bold text-slate-800 sm:text-3xl lg:text-4xl">
         Melayani Berbagai Macam Kategori

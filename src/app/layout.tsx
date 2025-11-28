@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   openGraph: {
-    images: '/favicon.png'
+    images: '/static/images/logo.png'
   },
   metadataBase: new URL(siteMetadata.url)
 }
