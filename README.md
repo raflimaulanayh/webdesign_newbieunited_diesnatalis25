@@ -1,86 +1,79 @@
-# Meal Up | Level Up Your Meal Website
+# Meal Up - Web Design Competition
 
-This is a [Next.js](https://nextjs.org) project for the Meal Up | Level Up Your Meal, bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Features
-
-- Next.js 16.0.4 (App Router)
-- Bun and pnpm support for fast development and CI
-- Authentication with NextAuth.js
-- Theme switching (light/dark) with `next-themes`
-- Global state management with Zustand
-- Data fetching with SWR and Axios
-- Carousel with Embla
-- UI components with Sonner, Lucide, and more
-- Font optimization using `next/font`
-- Linting, formatting, and type checking (ESLint, Prettier, TypeScript)
-- PWA support (`next-pwa`)
-- Analytics with Vercel Analytics
+Meal Up adalah platform *marketplace* inovatif yang dirancang untuk **Lomba Web Design Technoversary 2025**. Proyek ini bertujuan mengatasi masalah *Food Waste* dan *Food Insecurity* dengan menghubungkan surplus makanan dari industri kuliner ke konsumen luas, mendukung pencapaian **SDG 2 (Zero Hunger)** dan **SDG 12 (Responsible Consumption)** melalui teknologi Progressive Web App (PWA).
 
 ## Getting Started
 
-Install dependencies (choose one):
+Panduan ini akan membantu mengunduh dan menjalankan proyek Meal Up di komputer atau laptop Anda untuk tujuan pengembangan, pengujian, dan penilaian juri.
 
-```bash
-pnpm install
-# or
-bun install
-```
+### Prerequisites
 
-Run the development server:
+Software yang perlu Anda instal sebelum menjalankan proyek ini:
 
-```bash
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-You can start editing the page by modifying `src/app/(public)/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load Google Fonts (Barlow Condensed, Inter).
-
-## Project Structure
-
-- `src/app/` — App router pages and layouts
-- `src/components/` — UI components, providers, atoms
-- `src/constants/site-metadata/` — Site metadata (see `index.ts`)
-- `src/services/` — API and auth logic
-- `src/shared/` — Fonts and global styles
-- `src/utils/` — Utility functions
-- `types/` — TypeScript type definitions
-
-## Scripts
-
-- `pnpm dev` — Start development server
-- `pnpm build` — Build for production
-- `pnpm start` — Start production server
-- `pnpm lint` — Run linter
-- `pnpm typecheck` — TypeScript type checking
-- `pnpm prettier:format` — Format code
-
-Or use the same commands with `bun run` if you prefer Bun.
-
-## Environment Variables
-
-Set up your `.env.local` for secrets and public URLs, e.g.:
+* **Node.js** (Versi 20 atau terbaru sangat disarankan)
+* **pnpm** (Package manager utama yang digunakan dalam proyek ini)
 
 ```
-NEXTAUTH_SECRET=your-secret
-APP_URL=https://yourdomain.com
+# Cek versi node Anda
+node -v
+
+# Install pnpm secara global jika belum ada
+npm install -g pnpm
 ```
 
-## Learn More
+### Installing
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [pnpm Documentation](https://pnpm.io/)
-- [Bun Documentation](https://bun.sh/docs)
-- [NextAuth.js Docs](https://next-auth.js.org/)
-- [Vercel Analytics](https://vercel.com/analytics)
+Berikut adalah langkah-langkah untuk menyiapkan lingkungan pengembangan (development environment) yang berjalan:
 
-## Deployment
+**1. Clone Repository**
+  ```
+  git clone https://github.com/raflimaulanayh/webdesign_newbieunited_diesnatalis25.git
+  ```
 
-Deploy easily on [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+**2. Masuk ke Direktori Proyek**
+  ```
+  cd webdesign_newbieunited_diesnatalis25
+  ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**3. Instalasi Dependencies**
+  ```
+  pnpm install
+  ```
+
+**4. Jalankan Server Development**
+  ```
+  pnpm dev
+  ```
+
+Buka browser dan akses alamat yang muncul (biasanya http://localhost:3000).
+
+
+## Built With
+Proyek ini dibangun menggunakan teknologi Bleeding-Edge terkini untuk performa maksimal:
+
+* Next.js 16 - Framework React Utama (App Router)
+* React 19 - Library UI dengan Server Actions
+* Tailwind CSS v4 - Framework Styling (Utility-first)
+* TypeScript - Bahasa Pemrograman (Type Safety)
+* Zustand - Manajemen State Ringan
+* Framer Motion - Animasi Interaktif
+
+
+## Authors
+**Newbie United - SATU University:**
+* Aisyah Nur Fadilah - UI/UX Designer
+* Rafli Maulana Yusuf Herman - Front-End Developer
+  
+
+## License
+
+Proyek ini dibuat khusus untuk kompetisi Technoversary 2025. Hak cipta desain dan kode sepenuhnya milik Tim Newbie United.
+
+
+## Acknowledgments
+
+* Terima kasih kepada Panitia HIMA TI FKOM UNIKU atas penyelenggaraan acara.
+* Inspirasi desain dari gerakan Food Rescue global.
+* Aset gambar dari Unsplash(Royalty Free).
+* Ikon dari Phosphor Icons.
+
