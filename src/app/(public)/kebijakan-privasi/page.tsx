@@ -62,8 +62,8 @@ export default function KebijakanPrivasiPage() {
               <strong>Kontak & Bantuan</strong>
               <br />
               Untuk pertanyaan atau permintaan terkait privasi, silakan hubungi tim Meal Up melalui WhatsApp di{' '}
-              <a href="https://wa.me/6281234567890" className="text-blue-600 underline">
-                0812-3456-7890
+              <a href="https://wa.me/6285128025700" className="text-blue-600 underline">
+                0851-2802-5700
               </a>
               .
             </li>

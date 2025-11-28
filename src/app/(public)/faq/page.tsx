@@ -6,7 +6,7 @@ export const metadata = {
   description: 'Temukan jawaban atas pertanyaan umum seputar penggunaan layanan Meal Up.'
 }
 
-export const FaqPage = () => {
+export default function FaqPage() {
   return (
     <GeneralLayout>
       <FAQSection />
