@@ -1,12 +1,16 @@
 import { articles } from '@/constants/article-data'
 
-import { HeroArticle, ArticleList } from '@/components/organisms/article'
+import { ArticleList } from '@/components/organisms/article'
+import { HeroBanner } from '@/components/organisms/hero-banner'
 import { GeneralLayout } from '@/components/templates/general-layout'
 
 export default function ArticlePage() {
   return (
     <GeneralLayout className="min-h-screen">
-      <HeroArticle />
+      <HeroBanner
+        title="Jurnal Super Meal"
+        description="Selami fakta mengejutkan tentang sampah makanan, inspirasi dari mitra lokal, dan langkah kecil yang bisa kita lakukan untuk bumi yang lebih hijau"
+      />
       <ArticleList articles={articles} />
     </GeneralLayout>
   )

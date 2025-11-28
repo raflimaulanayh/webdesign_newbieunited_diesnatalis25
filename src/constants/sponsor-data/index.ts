@@ -22,6 +22,6 @@ export const SPONSOR_DATA = [
   {
     name: 'Hima Teknik Informatika',
     logo: '/static/images/sponsors/hima-ti.png',
-    url: 'https://www.instagram.com/himatekinformatika'
+    url: 'https://www.instagram.com/hima.ti.uniku'
   }
 ]

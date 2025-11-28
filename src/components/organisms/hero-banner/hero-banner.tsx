@@ -10,7 +10,7 @@ interface HeroProps {
   description: string
 }
 
-export const Hero = ({ title, description }: HeroProps) => {
+export const HeroBanner = ({ title, description }: HeroProps) => {
   return (
     <section className="relative w-full overflow-hidden bg-primary pt-20 md:pt-24">
       <div className="relative z-10 mx-auto text-center">

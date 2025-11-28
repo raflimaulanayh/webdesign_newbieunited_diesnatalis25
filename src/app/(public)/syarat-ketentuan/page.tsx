@@ -1,7 +1,7 @@
 import { CallToAction } from '@/components/organisms/call-to-action'
+import { HeroBanner } from '@/components/organisms/hero-banner'
 import { Container } from '@/components/templates/container'
 import { GeneralLayout } from '@/components/templates/general-layout'
-import { Hero } from '@/components/templates/hero'
 
 export const metadata = {
   title: 'Syarat dan Ketentuan',
@@ -11,7 +11,7 @@ export const metadata = {
 export default function SyaratKetentuanPage() {
   return (
     <GeneralLayout>
-      <Hero
+      <HeroBanner
         title="Syarat dan Ketentuan"
         description="Baca dengan seksama syarat dan ketentuan penggunaan aplikasi Meal Up. Kami berkomitmen memberikan layanan terbaik dan transparan untuk seluruh pengguna demi mendukung UMKM kuliner Indonesia."
       />

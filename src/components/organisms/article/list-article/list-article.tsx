@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { Button } from '@/components/atoms/ui/button'
 import { ArticleCard, ArticleProps } from '@/components/molecules/card/article-card'

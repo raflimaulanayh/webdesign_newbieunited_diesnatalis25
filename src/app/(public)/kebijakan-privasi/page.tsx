@@ -1,7 +1,7 @@
 import { CallToAction } from '@/components/organisms/call-to-action'
+import { HeroBanner } from '@/components/organisms/hero-banner'
 import { Container } from '@/components/templates/container'
 import { GeneralLayout } from '@/components/templates/general-layout'
-import { Hero } from '@/components/templates/hero'
 
 export const metadata = {
   title: 'Kebijakan Privasi',
@@ -11,7 +11,7 @@ export const metadata = {
 export default function KebijakanPrivasiPage() {
   return (
     <GeneralLayout>
-      <Hero
+      <HeroBanner
         title="Kebijakan Privasi"
         description="Kami berkomitmen untuk melindungi privasi dan data pribadi Anda. Baca kebijakan privasi kami untuk memahami bagaimana informasi Anda dikumpulkan, digunakan, dan dilindungi saat menggunakan layanan Meal Up."
       />

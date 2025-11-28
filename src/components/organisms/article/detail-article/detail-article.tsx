@@ -35,10 +35,10 @@ export const ArticleDetail = ({ article }: ArticleDetailProps) => {
     <div className="min-h-screen bg-white pb-20">
       <div className="relative h-[60vh] min-h-[400px] w-full overflow-hidden">
         <div
-          className={`absolute inset-0 h-full w-full transition-transform duration-[2000ms] ease-out ${mounted ? 'scale-105' : 'scale-100'}`}
+          className={`absolute inset-0 h-full w-full transition-transform duration-2000 ease-out ${mounted ? 'scale-105' : 'scale-100'}`}
         >
           <Image src={article.imageUrl} alt={article.title} fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10" />
         </div>
 
         <div className="absolute top-0 left-0 z-30 w-full p-6">
