@@ -29,4 +29,16 @@
   .bg-cta-gradient {
     background: linear-gradient(92deg, var(--primary, #00a8cc) -1.76%, var(--secondary, #44bba5) 138.96%);
   }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) var(--background);
+  }
+
+  .scrollbar-hide {
+    overflow: auto;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+  }
 }
