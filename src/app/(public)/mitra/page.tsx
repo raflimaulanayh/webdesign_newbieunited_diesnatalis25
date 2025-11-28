@@ -1,7 +1,7 @@
 import { CallToAction } from '@/components/organisms/call-to-action'
 import { FAQSection } from '@/components/organisms/faq'
 import { HeroBanner } from '@/components/organisms/hero-banner'
-import { AboutMitra, CategoryMitra } from '@/components/organisms/mitra'
+import { AboutMitra, BenefitMitra, CategoryMitra } from '@/components/organisms/mitra'
 import { GeneralLayout } from '@/components/templates/general-layout'
 
 export const metadata = {
@@ -19,6 +19,7 @@ export default function MitraPage() {
       />
       <AboutMitra />
       <CategoryMitra />
+      <BenefitMitra />
       <CallToAction />
       <FAQSection />
     </GeneralLayout>

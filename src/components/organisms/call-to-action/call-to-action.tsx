@@ -1,5 +1,6 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import { Fragment } from 'react'
 
 import { CTACard } from '@/components/molecules/card/cta-card'
@@ -13,6 +14,8 @@ interface Props {
 }
 
 export const CallToAction = ({ variant = 'default', className }: Props) => {
+  const pathname = usePathname()
+
   return (
     <Container className={cn('py-14 lg:py-16', className)}>
       {variant === 'minimal' ? (
@@ -34,8 +37,8 @@ export const CallToAction = ({ variant = 'default', className }: Props) => {
             </Fragment>
           }
           description="Ubah overstock makanan menjadi pendapatan tambahan. Balik modal setiap hari, tanpa ada yang terbuang."
-          ctaLabel="Lihat program mitra"
-          ctaLink="/mitra"
+          ctaLabel={pathname.includes('/mitra') ? 'Daftar Sekarang' : 'Lihat Program Mitra'}
+          ctaLink={pathname.includes('/mitra') ? '/registrasi' : '/mitra'}
         />
       )}
     </Container>

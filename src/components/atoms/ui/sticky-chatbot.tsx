@@ -41,8 +41,6 @@ export const StickyChatbot = () => {
         show ? 'right-4 lg:right-9' : '-right-full',
         'fixed bottom-4 z-40 flex items-center gap-2 transition-all duration-1000 ease-in-out hover:scale-90 hover:opacity-90 lg:bottom-7'
       )}
-      target="_blank"
-      rel="noopener noreferrer"
     >
       <div className="relative hidden rounded-full bg-teal-100 px-2.5 py-1 text-sm font-medium text-teal-700 lg:block">
         <span>Live Chat</span>
