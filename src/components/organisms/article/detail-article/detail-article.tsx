@@ -1,5 +1,6 @@
 'use client'
 
+import { articles } from '@/constants/article-data'
 import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,6 +13,7 @@ import { Container } from '@/components/templates/container'
 
 interface ArticleDetailProps {
   article: {
+    id: string
     title: string
     category: string
     imageUrl: string
@@ -30,6 +32,8 @@ export const ArticleDetail = ({ article }: ArticleDetailProps) => {
 
   const contentHtml = article.content || '<p>Konten belum tersedia.</p>'
   const tags = [article.category, 'Tips', 'Hemat', 'Anak Kos']
+
+  const relatedArticles = articles.filter((item) => item.id !== article.id).slice(0, 3)
 
   return (
     <div className="min-h-screen bg-white pb-20">
@@ -89,7 +93,7 @@ export const ArticleDetail = ({ article }: ArticleDetailProps) => {
           </div>
 
           <aside className="hidden lg:col-span-4 lg:block">
-            <ArticleSidebar tags={tags} />
+            <ArticleSidebar tags={tags} relatedArticles={relatedArticles} />
           </aside>
         </div>
       </Container>

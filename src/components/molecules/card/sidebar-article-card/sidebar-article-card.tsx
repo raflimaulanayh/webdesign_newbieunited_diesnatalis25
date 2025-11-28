@@ -24,9 +24,7 @@ export const SidebarArticleCard = ({ title, imageUrl, slug, date }: SidebarArtic
       </div>
 
       <div className="flex flex-col gap-1 py-1">
-        <h4 className="line-clamp-2 text-sm font-bold text-gray-900 transition-colors group-hover:text-indigo-600">
-          {title}
-        </h4>
+        <h4 className="line-clamp-2 text-sm font-bold text-gray-900 transition-colors group-hover:text-primary">{title}</h4>
         <span className="text-xs font-medium text-gray-500">{date}</span>
       </div>
     </Link>
