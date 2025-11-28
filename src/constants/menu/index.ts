@@ -10,5 +10,9 @@ export const MENU = [
   {
     label: 'Mitra',
     url: '/mitra'
+  },
+  {
+    label: 'Artikel',
+    url: '/article'
   }
 ]
