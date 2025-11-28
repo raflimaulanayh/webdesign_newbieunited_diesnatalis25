@@ -1,5 +1,7 @@
 'use client'
 
+import { motion, AnimatePresence } from 'framer-motion' // Import animasi
+import { CheckCircle, X } from 'lucide-react' // Import Icon
 import { useState } from 'react'
 
 import { Button } from '@/components/atoms/ui/button'
@@ -21,6 +23,8 @@ export const RegisterForm = () => {
     address: ''
   })
 
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
   const toggleCategory = (category: string) => {
     setFormData((prev) => {
       const exists = prev.categories.includes(category)
@@ -32,6 +36,29 @@ export const RegisterForm = () => {
     })
   }
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+
+    setIsSubmitted(true)
+  }
+
+  const handleClosePopup = () => {
+    setIsSubmitted(false)
+    setFormData({
+      brandName: '',
+      fullName: '',
+      businessType: '',
+      position: '',
+      categories: [],
+      whatsapp: '',
+      email: '',
+      instagram: '',
+      overstock: '',
+      city: '',
+      address: ''
+    })
+  }
+
   const BUSINESS_TYPES = ['Restoran / Cafe', 'Bakery / Toko Roti', 'Hotel / Katering', 'Supermarket / Ritel', 'UMKM Rumahan']
   const POSITIONS = ['Pemilik Usaha', 'Manajer Toko', 'Staf Operasional', 'Lainnya']
   const FOOD_CATEGORIES = ['Siap Saji', 'Roti & Pastry', 'Bahan Segar', 'Surprise Box']
@@ -39,8 +66,8 @@ export const RegisterForm = () => {
   const CITIES = ['Jakarta', 'Bandung', 'Surabaya', 'Bali', 'Lainnya']
 
   return (
-    <Container className="pt-24 pb-16">
-      <form className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
+    <Container className="relative pt-24 pb-16">
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
         <div className="space-y-6">
           <InputGroup
             label="Nama Brand Usaha"
@@ -99,6 +126,7 @@ export const RegisterForm = () => {
             placeholder="Nama pemilik atau manajer toko"
             value={formData.fullName}
             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+            required
           />
 
           <SelectGroup
@@ -114,6 +142,7 @@ export const RegisterForm = () => {
             type="tel"
             value={formData.whatsapp}
             onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+            required
           />
 
           <InputGroup
@@ -131,11 +160,57 @@ export const RegisterForm = () => {
             onChange={(e) => setFormData({ ...formData, overstock: e.target.value })}
           />
 
-          <Button size="lg" variant="secondary">
+          <Button size="lg" variant="secondary" className="w-full md:w-auto">
             Kirim data
           </Button>
         </div>
       </form>
+
+      <AnimatePresence>
+        {isSubmitted && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={handleClosePopup}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            />
+
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              className="relative w-full max-w-md rounded-3xl bg-white p-8 text-center shadow-2xl"
+            >
+              <button
+                onClick={handleClosePopup}
+                className="absolute top-4 right-4 p-2 text-slate-400 transition-colors hover:text-slate-600"
+              >
+                <X size={24} />
+              </button>
+
+              <div className="flex flex-col items-center gap-4">
+                <div className="mb-2 flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-green-600">
+                  <CheckCircle className="h-10 w-10" />
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-bold text-slate-800">Pendaftaran Terkirim!</h3>
+                  <p className="text-slate-600">
+                    Terima kasih telah mendaftar sebagai mitra Meal Up. Tim kami akan menghubungi Anda melalui WhatsApp dalam
+                    waktu 1x24 jam.
+                  </p>
+                </div>
+
+                <Button className="mt-4 w-full" onClick={handleClosePopup}>
+                  Kembali
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </Container>
   )
 }

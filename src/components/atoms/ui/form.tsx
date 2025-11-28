@@ -38,7 +38,7 @@ export const SelectGroup = ({ label, options, placeholder = 'Pilih', ...props }:
     <div className="relative">
       <select
         {...props}
-        className="w-full cursor-pointer appearance-none rounded-md border border-slate-300 bg-white px-4 py-3 text-slate-700 transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+        className="w-full cursor-pointer appearance-none rounded-md border border-slate-300 px-4 py-3 text-slate-700 transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
         defaultValue=""
       >
         <option value="" disabled hidden>
