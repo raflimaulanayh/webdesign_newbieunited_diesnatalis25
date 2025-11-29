@@ -43,7 +43,14 @@ cd webdesign_newbieunited_technoversary25
 pnpm install
 ```
 
-**4. Jalankan Server Development**
+**4. Konfigurasi Environment Variable (Penting untuk Chatbot)**
+1.  Buat file baru bernama `.env` di *root folder* proyek.
+2.  Salin dan tempel konfigurasi berikut ke dalam file tersebut:
+```
+GOOGLE_GENERATIVE_AI_API_KEY=AIzaSyCpIrsXQWJw8EQacnu4ORyeyFiuFn55GCA
+```
+
+**5. Jalankan Server Development**
 
 ```
 pnpm dev
@@ -66,8 +73,8 @@ Proyek ini dibangun menggunakan teknologi Bleeding-Edge terkini untuk performa m
 
 **Newbie United - SATU University:**
 
-- Aisyah Nur Fadilah - UI/UX Designer
-- Rafli Maulana Yusuf Herman - Front-End Developer
+- Aisyah Nur Fadilah (UI/UX Designer)
+- Rafli Maulana Yusuf Herman (Front-End Developer)
 
 ## License
 
